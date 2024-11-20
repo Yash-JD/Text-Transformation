@@ -11,6 +11,19 @@ export default function TextForm(props) {
         setText(newText);
     }
 
+    const handleTiCLick = () => {
+        let newText = text.toLowerCase()
+                          .split(' ').map(word => word.charAt(0)
+                          .toUpperCase() + word.slice(1))
+                          .join(' ');
+        setText(newText);
+    }
+
+    const handleClearText = () => {
+        let newText = '';
+        setText(newText);
+    }
+
     const handleOnChange = (event) => {
         setText(event.target.value)  // this will enable to add or change within existing text
     }
@@ -26,8 +39,10 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpCLick}>Convert to Uppecase</button>
-                <button className="btn btn-primary mx-2" onClick={handleLoCLick}>Convert to Lowercase</button>
+                <button className="btn btn-primary mx-2" onClick={handleUpCLick}>Convert to UPPERCASE</button>
+                <button className="btn btn-primary mx-2" onClick={handleLoCLick}>Convert to lowercase</button>
+                <button className="btn btn-primary mx-2" onClick={handleTiCLick}>Convert to Title Case</button>
+                <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear text</button>
         </div>
             
         <div className="container my-3">
