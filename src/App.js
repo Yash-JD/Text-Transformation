@@ -3,7 +3,6 @@ import './App.css';
 import './components/Navbar.js'
 import Navbar from './components/Navbar.js';
 import TextForm from './components/TextForm.js';
-// import About from './components/About.js';
 
 function App() {
   const [mode, setMode] = useState('light');  // Whether dark mode is enabled or not
@@ -24,7 +23,6 @@ function App() {
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <div className="container my-3">
         <TextForm heading="Enter the text to analyze" mode={mode} />
-        {/* <About/> */}
       </div>
     </>
   );
